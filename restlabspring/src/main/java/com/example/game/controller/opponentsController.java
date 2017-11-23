@@ -34,6 +34,7 @@ public class opponentsController {
 		    /**
 		     * Method to create a opponent using HTTP URI as /opponent?
 		     * HTTP REQUEST - PUT
+		     *If player Id does not exist send a 404 ID not FOUND error
 		     */
 		    @PutMapping("/opponents/{id1}/{id2}")
 		    public @ResponseBody ModelAndView  updateOpponents(HttpServletResponse response,
@@ -82,6 +83,11 @@ public class opponentsController {
 		    		}
 		    
 
+		/**
+		     * Method to delete a opponent using HTTP URI as /opponent/{id1}/{id2}
+		     * HTTP REQUEST - Delete
+		     * If player Id does not exist send a 404 ID not FOUND error
+		     */
 		    @DeleteMapping("/opponents/{id}/{id2}")
 		    public @ResponseBody ModelAndView deleteOpponents(
 		    		HttpServletResponse response,
