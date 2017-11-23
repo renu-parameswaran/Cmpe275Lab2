@@ -37,7 +37,11 @@ public class playerController extends Throwable{
 	    @Autowired
 	    private playerService playerService;
 
-	    @GetMapping("/player/{id}")
+	/**
+	     * Method to create a player using HTTP URI as /player/{id}
+	     * HTTP REQUEST - GET
+	     */    
+	@GetMapping("/player/{id}")
 	    public @ResponseBody ModelAndView getPlayerById(
 	    		HttpServletResponse response,
 	    		@PathVariable(value = "id") Long playerId) {
@@ -112,14 +116,15 @@ public class playerController extends Throwable{
 	    			if(player == null) {
 	    				return new ResponseEntity<>("Specified Player ID does not exist. Please check your request or try later.", HttpStatus.NOT_FOUND);
 	    			}
+		    
+		    		/*
+	    			 * Check if the Parameter value given in the URL is not null, then update it, else retain the old one
+	    			 */
 	    			
 	    			else if(firstname == null || lastname == null || email == null){
 	    				return new ResponseEntity<>("Specified Player ID does not exist. Please check your request or try later.", HttpStatus.NOT_FOUND);
 	    			}
-	    			
-	    			/*
-	    			 * Check if the Parameter value given in the URL is not null, then update it, else retain the old one
-	    			 */
+	    		
 	    			else {
 	    				player.setFirstname(firstname);
 	    				player.setLastname(lastname);
@@ -143,6 +148,10 @@ public class playerController extends Throwable{
 	    }
 
 
+	   /**
+	     * Method to delete a sponsor using HTTP URI as /player/{id}?
+	     * HTTP REQUEST - DELETE
+	     */
 	    @DeleteMapping("/player/{id}")
 	    public @ResponseBody ModelAndView deletePlayer(HttpServletResponse response,
 	    		@PathVariable(value = "id") Long playerId) {
