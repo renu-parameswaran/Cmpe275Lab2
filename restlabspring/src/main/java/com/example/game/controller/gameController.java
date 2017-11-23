@@ -4,7 +4,7 @@ import com.example.game.model.sponsor;
 import com.example.game.model.player;
 import com.example.game.repository.gameRepository;
 import com.example.game.service.playerService;
-//import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -103,6 +103,8 @@ public class gameController extends Throwable  {
        
     }
 
+	/* Delete a sponsor
+	*/
     @DeleteMapping("/sponsor/{id}")
     public ResponseEntity deleteSponsor(@PathVariable(value = "id") Long sponsorId) {
     	sponsor sponsor = gameRepository.findOne(sponsorId);
