@@ -38,7 +38,7 @@ public class playerController extends Throwable{
 	    private playerService playerService;
 
 	/**
-	     * Method to create a player using HTTP URI as /player/{id}
+	     * Method to fetch details a player using HTTP URI as /player/{id}
 	     * HTTP REQUEST - GET
 	     */    
 	@GetMapping("/player/{id}")
@@ -97,7 +97,7 @@ public class playerController extends Throwable{
 	    
 
 	    /**
-	     * Method to update a sponsor using HTTP URI as /player/{id}?
+	     * Method to update a player details using HTTP URI as /player/{id}?
 	     * HTTP REQUEST - POST
 	     */
 	    @PostMapping("/player/{id}")
@@ -149,7 +149,7 @@ public class playerController extends Throwable{
 
 
 	   /**
-	     * Method to delete a sponsor using HTTP URI as /player/{id}?
+	     * Method to delete a player using HTTP URI as /player/{id}?
 	     * HTTP REQUEST - DELETE
 	     */
 	    @DeleteMapping("/player/{id}")
