@@ -36,6 +36,10 @@ public class gameController extends Throwable  {
 	@Autowired
     private playerService playerService;
 
+   /**
+     * Method to get a sponsor using HTTP URI as /sponsor/{id}
+     * HTTP REQUEST - GET
+     */
     @GetMapping("/sponsor/{id}")
     public ResponseEntity<sponsor> getSponsorById(@PathVariable(value = "id") Long sponsorId) {
         sponsor sponsor = gameRepository.findOne(sponsorId);
@@ -103,8 +107,9 @@ public class gameController extends Throwable  {
        
     }
 
-	/* Delete a sponsor
-	*/
+   /**
+     * Method to Delete Sponsor using HTTP URI as /sponsor/{id}
+     */
     @DeleteMapping("/sponsor/{id}")
     public ResponseEntity deleteSponsor(@PathVariable(value = "id") Long sponsorId) {
     	sponsor sponsor = gameRepository.findOne(sponsorId);
