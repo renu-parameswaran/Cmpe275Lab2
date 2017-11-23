@@ -4,7 +4,7 @@ import com.example.game.model.sponsor;
 import com.example.game.model.player;
 import com.example.game.repository.gameRepository;
 import com.example.game.service.playerService;
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+//import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
